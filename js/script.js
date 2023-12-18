@@ -3,6 +3,10 @@
 imgDir = "cats_full/";
 imgFiles = ['IMG_9352.jpg', 'IMG_7419.jpg', 'IMG_7424.jpg', 'IMG_7418.jpg', 'IMG_7395.jpg', 'IMG_7427.jpg', 'IMG_9350.jpg', 'IMG_7396.jpg', 'IMG_7423.jpg', 'IMG_1250.jpg', 'IMG_9590.jpg', 'IMG_7408.jpg', 'IMG_1246.jpg', 'IMG_9342.jpg', 'IMG_7409.jpg', 'cat1.jpg', 'IMG_7485.jpg', 'IMG_7484.jpg', 'IMG_7490.jpg', 'IMG_2850.jpg', 'cat14.jpg', 'IMG_9497.jpg', 'IMG_7486.jpg', 'cat2.jpg', 'IMG_7479.jpg', 'IMG_7478.jpg', 'cat3.jpg', 'IMG_7487.jpg', 'IMG_7483.jpg', 'cat7.jpg', 'IMG_7468.jpg', 'IMG_7469.jpg', 'IMG_7455.jpg', 'cat6.jpg', 'IMG_7482.jpg', 'cat10.jpg', 'cat12.jpg', 'IMG_7480.jpg', 'IMG_7457.jpg', 'IMG_7456.jpg', 'IMG_7481.jpg', 'cat13.jpg', 'cat8.jpg', 'IMG_7467.jpg', 'IMG_7466.jpg', 'IMG_7472.jpg', 'cat9.jpg', 'IMG_3984.jpg', 'IMG_9501.jpg', 'IMG_7458.jpg', 'IMG_7464.jpg', 'IMG_7470.jpg', 'IMG_7471.jpg', 'IMG_7465.jpg', 'IMG_7459.jpg', 'IMG_3993.jpg', 'IMG_9500.jpg', 'IMG_7461.jpg', 'IMG_7475.jpg', 'IMG_7474.jpg', 'IMG_7460.jpg', 'IMG_2849.jpg', 'IMG_3994.jpg', 'IMG_9498.jpg', 'IMG_7489.jpg', 'IMG_7462.jpg', 'IMG_8591.jpg', 'IMG_7463.jpg', 'IMG_7488.jpg', 'IMG_9499.jpg', 'IMG_3995.jpg', 'IMG_3981.jpg', 'IMG_7410.jpg', 'IMG_7404.jpg', 'IMG_7411.jpg', 'IMG_5614.jpg', 'IMG_7407.jpg', 'IMG_4443.jpg', 'IMG_7402.jpg', 'IMG_7416.jpg', 'IMG_7403.jpg', 'IMG_7398.jpg', 'IMG_7401.jpg', 'IMG_7429.jpg', 'IMG_9821.jpg', 'IMG_7428.jpg', 'IMG_7400.jpg']
 
+const delay = (delayInms) => {
+    return new Promise(resolve => setTimeout(resolve, delayInms));
+  };
+
 function ShuffleFilenames(){
     for (var i = imgFiles.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -61,6 +65,7 @@ function InitializeImageElements()
         elem.setAttribute("loading", "lazy");
         elem.addEventListener('click', ToggleOverlay);
         cols[i % nCols].appendChild(elem);
+        delay(100);
     }
     let overlay = document.getElementById("overlay");
     overlay.addEventListener('click', ToggleOverlay);
