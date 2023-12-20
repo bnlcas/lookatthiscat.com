@@ -26,18 +26,23 @@ function ToggleOverlay(){
     let showOverlay = this.hasAttribute('src');
     
     let overlay = document.getElementById("overlay");
+    let overlay_image = document.getElementById("overlay_image");
     if(showOverlay){
         let src = this.getAttribute('src');
         overlay.style.zIndex ="10";
         overlay.style.backgroundColor = " RGBA(0,0,0,.8)";
-        overlay.style.backgroundImage = "url(\"" + src + "\")";
+        //overlay.style.backgroundImage = "url(\"" + src + "\")";
         overlay.style.pointerEvents = "auto";
+        overlay_image.src = src;
+        overlay_image.style.visibility = "visible";
     }
     else {
         overlay.style.zIndex ="-1";
         overlay.style.backgroundColor = " RGBA(0,0,0,0)";
         overlay.style.backgroundImage = "none";
         overlay.style.pointerEvents = "none";
+        overlay_image.src = "data:,";
+        overlay_image.style.visibility = "hidden";
     }
 }
 
