@@ -42,6 +42,9 @@ a:hover
   background-position: center;  
   background-attachment: fixed;
   background-size: contain;
+  -o-background-size: contain;
+  -moz-background-size: contain;
+  -webkit-background-size: contain;
   width: 100%;
   height:100%;
   z-index: -1;
